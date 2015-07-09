@@ -15,6 +15,8 @@ public class MyActivity extends Activity
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        TextView counterField = (TextView)findViewById(R.id.counter);
+        counterField.setText(counter.toString());
     }
 
     public void increaseCounter(View view) {
