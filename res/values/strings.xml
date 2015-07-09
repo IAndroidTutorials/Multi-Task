@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyActivity</string>
+    <string name="app_name">Pushup Counter</string>
     <string name="hello_world">Hello World, MyActivity</string>
     <string name="main_button_text">Touch Your Chin Here</string>
 </resources>
