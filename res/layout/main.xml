@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="1">
+<RelativeLayout android:id="@+id/RelativeLayout01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:orientation="horizontal"
-                  android:layout_width="fill_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:layout_marginTop="50dp"
+                  android:layout_centerHorizontal="true"
                   android:weightSum="1">
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/total_score"
+            android:textSize="40sp"
             android:id="@+id/textView"
             />
 
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="40sp"
             android:id="@+id/counter"
             />
     </LinearLayout>
 
 
-    <RelativeLayout android:id="@+id/RelativeLayout01"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Button
-            android:text="@string/main_button_text"
-            android:background="@drawable/round_button"
-            android:id="@+id/chin"
-            android:layout_width="300dp"
-            android:layout_centerInParent="true"
-            android:onClick="increaseCounter"
-            android:layout_height="300dp" />
 
-    </RelativeLayout>
+    <Button
+        android:text="@string/main_button_text"
+        android:background="@drawable/round_button"
+        android:id="@+id/chin"
+        android:layout_width="300dp"
+        android:layout_centerInParent="true"
+        android:onClick="increaseCounter"
+        android:layout_height="300dp" />
 
-</LinearLayout>
+</RelativeLayout>
 
