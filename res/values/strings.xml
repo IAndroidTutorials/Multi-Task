@@ -5,4 +5,7 @@
     <string name="hello_world">Hello World, MyActivity</string>
     <string name="main_button_text">Touch Your Chin Here</string>
     <string name="total_score">Total Score : </string>
+    <string name="create_task_button_text">Create Task</string>
+    <string name="create_todo">Create ToDo</string>
+    <string name="all_tasks">All Tasks</string>
 </resources>

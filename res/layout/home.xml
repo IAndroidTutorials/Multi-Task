@@ -3,9 +3,15 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-<Button
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="moveToPushupCounter"
+        android:text="@string/pushup_counter"/>
+
+    <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:onClick="moveToPushupCounter"
-    android:text="@string/pushup_counter"/>
+    android:onClick="moveToCreateToDo"
+    android:text="@string/create_todo"/>
 </LinearLayout>

@@ -19,4 +19,9 @@ public class HomeActivity extends Activity {
         startActivity(intent);
     }
 
+    public void moveToCreateToDo(View view) {
+        Intent intent = new Intent(this, CreateToDoActivity.class);
+        startActivity(intent);
+    }
+
 }

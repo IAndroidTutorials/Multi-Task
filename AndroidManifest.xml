@@ -18,5 +18,12 @@
         <activity android:name="MyActivity" android:label="@string/pushup_counter">
 
         </activity>
+        <activity android:name="CreateToDoActivity" android:label="@string/create_todo">
+
+        </activity>
+
+        <activity android:name="ListToDoActivity" android:label="@string/all_tasks">
+
+        </activity>
     </application>
 </manifest>
