@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class CreateToDoActivity extends Activity {
 
@@ -31,7 +34,9 @@ public class CreateToDoActivity extends Activity {
 
         db.insert(ToDoContract.ToDo.TABLE_NAME, "null", values);
         Log.e("INSERT", "Successfully Inserted");
-        
+
+        taskBox.setText("");
+        Toast.makeText(this, "Task Created", LENGTH_SHORT).show();
     }
 
     public void showAllTasks(View view) {
