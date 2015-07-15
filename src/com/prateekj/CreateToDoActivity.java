@@ -30,7 +30,8 @@ public class CreateToDoActivity extends Activity {
         values.put(ToDoContract.ToDo.CREATED_AT, new Date().toString());
 
         db.insert(ToDoContract.ToDo.TABLE_NAME, "null", values);
-        Log.e("INSERT", "Successfully Insert");
+        Log.e("INSERT", "Successfully Inserted");
+        
     }
 
     public void showAllTasks(View view) {
