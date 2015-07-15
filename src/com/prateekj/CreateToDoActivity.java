@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,18 +26,7 @@ public class CreateToDoActivity extends Activity {
     public void saveTask(View view) {
         EditText taskBox = (EditText)findViewById(R.id.task_box);
         String task = taskBox.getText().toString();
-        DbHelper dbHelper = new DbHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(ToDoContract.ToDo.TASK, task);
-        values.put(ToDoContract.ToDo.CREATED_AT, new Date().toString());
-
-        db.insert(ToDoContract.ToDo.TABLE_NAME, "null", values);
-        Log.e("INSERT", "Successfully Inserted");
-
-        taskBox.setText("");
-        Toast.makeText(this, "Task Created", LENGTH_SHORT).show();
+        new CreateToDoTask(this, taskBox).execute(task);
     }
 
     public void showAllTasks(View view) {
