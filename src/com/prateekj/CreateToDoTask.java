@@ -40,7 +40,6 @@ public class CreateToDoTask extends AsyncTask<String, Void, Void>{
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Log.d("DEBUG", "GOING TO CHANGE UI");
         this.taskBox.setText("");
         Toast.makeText(this.context, "Task Created", LENGTH_SHORT).show();
 
