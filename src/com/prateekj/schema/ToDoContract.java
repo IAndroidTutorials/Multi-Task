@@ -1,4 +1,4 @@
-package com.prateekj;
+package com.prateekj.schema;
 
 import android.provider.BaseColumns;
 

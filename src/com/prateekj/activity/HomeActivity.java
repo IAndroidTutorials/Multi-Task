@@ -1,9 +1,11 @@
-package com.prateekj;
+package com.prateekj.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.prateekj.R;
 
 public class HomeActivity extends Activity {
     private Integer counter = 0;

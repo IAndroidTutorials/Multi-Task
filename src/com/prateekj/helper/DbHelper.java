@@ -1,8 +1,10 @@
-package com.prateekj;
+package com.prateekj.helper;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.prateekj.schema.ToDoContract;
 
 public class DbHelper extends SQLiteOpenHelper {
 

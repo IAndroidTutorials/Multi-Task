@@ -1,4 +1,4 @@
-package com.prateekj;
+package com.prateekj.task;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.prateekj.helper.DbHelper;
+import com.prateekj.schema.ToDoContract;
 
 import java.util.Arrays;
 import java.util.Date;

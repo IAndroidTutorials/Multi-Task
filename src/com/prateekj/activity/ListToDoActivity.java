@@ -1,15 +1,16 @@
-package com.prateekj;
+package com.prateekj.activity;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.lang.Override;
-import java.lang.String;
+import com.prateekj.helper.DbHelper;
+import com.prateekj.R;
+import com.prateekj.schema.ToDoContract;
+
 import java.util.ArrayList;
 import java.util.List;
 

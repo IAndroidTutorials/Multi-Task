@@ -1,11 +1,11 @@
-package com.prateekj;
+package com.prateekj.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.lang.Integer;
+import com.prateekj.R;
 
 public class MyActivity extends Activity
 {

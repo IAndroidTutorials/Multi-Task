@@ -1,19 +1,13 @@
-package com.prateekj;
+package com.prateekj.activity;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.util.Date;
-
-import static android.widget.Toast.LENGTH_SHORT;
+import com.prateekj.R;
+import com.prateekj.task.CreateToDoTask;
 
 public class CreateToDoActivity extends Activity {
 
