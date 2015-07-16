@@ -26,6 +26,7 @@ public class CreateToDoActivity extends Activity {
     public void saveTask(View view) {
         EditText taskBox = (EditText)findViewById(R.id.task_box);
         String task = taskBox.getText().toString();
+        if ("".equals(task)) return;
         new CreateToDoTask(this, taskBox).execute(task);
     }
 
