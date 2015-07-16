@@ -51,7 +51,7 @@ public class ListToDoActivity extends Activity {
     }
 
     private void showTasks() {
-        ArrayAdapter<String> tasksAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, retrieveTasks());
+        ArrayAdapter<String> tasksAdapter = new ArrayAdapter<String>(this, R.layout.todo_list_text_view, retrieveTasks());
         ListView taskListView = (ListView) findViewById(R.id.task_list);
         taskListView.setAdapter(tasksAdapter);
     }
