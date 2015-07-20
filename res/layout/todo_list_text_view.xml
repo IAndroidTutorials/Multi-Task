@@ -9,6 +9,7 @@
     android:longClickable="true"
     android:textSize="22sp"
     android:textColor="#FFFFFF"
+    android:background="@android:drawable/list_selector_background"
     android:gravity="center_vertical"
     android:padding="6sp"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
