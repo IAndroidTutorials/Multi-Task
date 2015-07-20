@@ -1,7 +1,6 @@
 package com.prateekj.activity;
 
 import android.app.Activity;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -15,8 +14,7 @@ import android.widget.Toast;
 
 import com.prateekj.AsyncTaskResultHandler;
 import com.prateekj.R;
-import com.prateekj.helper.DbHelper;
-import com.prateekj.schema.ToDoContract;
+import com.prateekj.task.DeleteToDoTask;
 import com.prateekj.task.ListToDoTask;
 
 import java.util.List;
@@ -55,19 +53,9 @@ public class ListToDoActivity extends Activity implements AsyncTaskResultHandler
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        CharSequence text = this.currentlySelectedTask.getText();
-        deleteToDoFor(text.toString());
+        CharSequence task = this.currentlySelectedTask.getText();
+        new DeleteToDoTask(this).execute(task.toString());
         return super.onContextItemSelected(item);
-    }
-
-    private void deleteToDoFor(String task) {
-        DbHelper dbHelper = new DbHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String selection = ToDoContract.ToDo.TASK + " LIKE ?";
-        String[] selectionArgs = {task};
-        db.delete(ToDoContract.ToDo.TABLE_NAME, selection, selectionArgs);
-        this.taskListAdapter.remove(task);
-        Toast.makeText(this, "Task Deleted", LENGTH_SHORT).show();
     }
 
     @Override
@@ -76,5 +64,10 @@ public class ListToDoActivity extends Activity implements AsyncTaskResultHandler
         ListView taskListView = (ListView) findViewById(R.id.task_list);
         taskListView.setAdapter(this.taskListAdapter);
         registerForContextMenu(taskListView);
+    }
+
+    public void updateList(String task){
+        this.taskListAdapter.remove(task);
+        Toast.makeText(this, "Task Deleted", LENGTH_SHORT).show();
     }
 }
