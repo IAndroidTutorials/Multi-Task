@@ -25,5 +25,8 @@
         <activity android:name=".activity.ListToDoActivity" android:label="@string/all_tasks">
 
         </activity>
+        <activity android:name=".activity.TaskActivity" android:label="@string/task">
+
+        </activity>
     </application>
 </manifest>

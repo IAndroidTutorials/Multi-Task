@@ -1,6 +1,7 @@
 package com.prateekj.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -41,6 +42,13 @@ public class ListToDoActivity extends Activity implements AsyncTaskResultHandler
 
     private void showTasks() {
         new ListToDoTask(this).execute();
+    }
+
+    public void expandActivity(View view) {
+        TextView taskTextView = (TextView) view;
+        Intent intent = new Intent(this, TaskActivity.class);
+        intent.putExtra("task_text", taskTextView.getText().toString());
+        startActivity(intent);
     }
 
     @Override

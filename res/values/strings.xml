@@ -9,4 +9,5 @@
     <string name="create_todo">Create ToDo</string>
     <string name="all_tasks">All Tasks</string>
     <string name="delete">Delete</string>
+    <string name="task">Task</string>
 </resources>
