@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.prateekj.AsyncTaskResultHandler;
+import com.prateekj.PostDeleteToDoTaskHandler;
 import com.prateekj.R;
 import com.prateekj.task.DeleteToDoTask;
 import com.prateekj.task.ListToDoTask;
@@ -22,7 +23,7 @@ import java.util.List;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
-public class ListToDoActivity extends Activity implements AsyncTaskResultHandler<String>{
+public class ListToDoActivity extends Activity implements AsyncTaskResultHandler<String>, PostDeleteToDoTaskHandler{
 
     private TextView currentlySelectedTask;
     private ArrayAdapter<String> taskListAdapter;
@@ -44,7 +45,7 @@ public class ListToDoActivity extends Activity implements AsyncTaskResultHandler
         new ListToDoTask(this).execute();
     }
 
-    public void expandActivity(View view) {
+    public void expandTask(View view) {
         TextView taskTextView = (TextView) view;
         Intent intent = new Intent(this, TaskActivity.class);
         intent.putExtra("task_text", taskTextView.getText().toString());
@@ -74,7 +75,8 @@ public class ListToDoActivity extends Activity implements AsyncTaskResultHandler
         registerForContextMenu(taskListView);
     }
 
-    public void updateList(String task){
+    @Override
+    public void handleAfterDelete(String task){
         this.taskListAdapter.remove(task);
         Toast.makeText(this, "Task Deleted", LENGTH_SHORT).show();
     }

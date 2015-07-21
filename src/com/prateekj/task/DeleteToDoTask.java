@@ -1,24 +1,25 @@
 package com.prateekj.task;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 
-import com.prateekj.activity.ListToDoActivity;
+import com.prateekj.PostDeleteToDoTaskHandler;
 import com.prateekj.helper.DbHelper;
 import com.prateekj.schema.ToDoContract;
 
 public class DeleteToDoTask extends AsyncTask<String, Void, String>{
 
-    private ListToDoActivity activity;
+    private PostDeleteToDoTaskHandler postDeleteToDoTaskHandler;
 
-    public DeleteToDoTask(ListToDoActivity activity) {
-        this.activity = activity;
+    public DeleteToDoTask(PostDeleteToDoTaskHandler postDeleteToDoTaskHandler) {
+        this.postDeleteToDoTaskHandler = postDeleteToDoTaskHandler;
     }
 
     @Override
     protected String doInBackground(String... params) {
         String task = params[0];
-        DbHelper dbHelper = new DbHelper(this.activity);
+        DbHelper dbHelper = new DbHelper((Context)this.postDeleteToDoTaskHandler);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String selection = ToDoContract.ToDo.TASK + " LIKE ?";
         String[] selectionArgs = {task};
@@ -28,6 +29,6 @@ public class DeleteToDoTask extends AsyncTask<String, Void, String>{
 
     @Override
     protected void onPostExecute(String task) {
-        this.activity.updateList(task);
+        this.postDeleteToDoTaskHandler.handleAfterDelete(task);
     }
 }
